@@ -108,3 +108,81 @@ const aMayusculas = nombres.map(function(e){
     return e.toUpperCase()
 })
 console.log(aMayusculas)
+
+//3 - Funciones ARROW (Flecha) --> Expresiones LAMBDA
+//console.log(cuadrado(4))
+const cuadrado = (x) => {return x*x}
+// const cuadrado = function(x){
+//     return x*x
+// }
+// function cuadrado(x){
+//     return x*X
+// }
+console.log(cuadrado(4))
+
+const suma = (x,y) => {console.log(x+y)}
+console.log(suma(2,4))
+
+const suma2 = (x,y) => x+y //Return implicito
+console.log(suma2(2,4)) 
+
+const suma3 = (x,y) => {x+y}
+console.log(suma3(2,4)) 
+
+//RESUMEN
+//1 - Declaracion
+console.log(esPar(7))
+function esPar(num){return num%2 == 0}
+console.log(esPar(2))
+
+//2 - Expresion
+const esPar2 = function(num){return num%2 == 0}
+console.log(esPar2(2))
+
+//3 - Arrow LAMBDA
+const espar3 = (num) => num%2 == 0
+console.log(espar3(2))
+
+//Funciones ANONIMAS
+// function(){} las funciones declarativas no pueden ser anonimas
+const digoHola = function(){return "Hola"}
+const digoHola2 = () => "Hola"
+console.log(digoHola())
+console.log(digoHola2())
+
+//Más funciones con ARRAYS y LAMBDA
+const nombres2 = ["Juan","Pepa","Manolo","Maria"]
+const buscar = nombres2.find(function(item){
+    /**/ 
+})
+const buscarLAMBDA = nombres2.find(item => item.indexOf("M") === 0) // return implicito
+console.log(buscarLAMBDA)
+
+const funcBuscar = item => item.indexOf("M") === 0
+const funcBuscar2 = nombres2.find(funcBuscar)
+console.log(funcBuscar2)
+
+/*
+    const aMayusculas = nombres.map(function(e){
+        return e.toUpperCase()
+    })
+*/
+
+const aMayusculas2 = nombres.map(e => e.toUpperCase())
+console.log(aMayusculas2)
+
+//filter --> Obtener TODAs las ocurrencias que incluyen la "M"
+const funcBuscar3 = nombres2.filter(funcBuscar)
+console.log(funcBuscar3)
+
+const funcBuscar4 = item => item.includes('M')
+const funcBuscar5 = nombres2.filter(funcBuscar4)
+console.log(funcBuscar2)
+
+const everyName = nombres2.every(item => item.includes("a"))
+console.log(everyName)
+
+const someName = nombres2.some(item => item.includes("J"))
+console.log(someName)
+
+//Operador ternario
