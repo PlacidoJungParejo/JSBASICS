@@ -186,3 +186,39 @@ const someName = nombres2.some(item => item.includes("J"))
 console.log(someName)
 
 //Operador ternario
+let edad = 21
+if(edad >=18){
+    console.log("Mayor edad")
+}else{
+    console.log("Menor edad")
+}
+let edad2 = 21 >= 18 ? "Mayor edad" : "Menor edad"
+console.log(edad2)
+
+//Parámetros por defecto
+function multiplicarDefecto(a=4,b=4){
+    console.log(a*b)
+}
+multiplicarDefecto(4,2)
+multiplicarDefecto()
+
+const numeros1 = [1,2,3]
+const numeros2 = [4,5,6]
+const resultadoNum = ["Paco","Juan",...numeros1,...numeros2,7,8,9]
+console.log(resultadoNum)
+
+// function sumaTotal(a,b,c){}
+// function sumaTotal(a,b,c,d,f){}
+
+//numero indefinido por parámetro
+//alternativa a la sobrecarga de operadores o polimorfismo
+function sumaTotal(...numeros){
+    let total = 0
+    for(let n of numeros){
+        total += n
+    }
+    console.log(total)
+}
+
+sumaTotal(1,2,3)
+sumaTotal(1,2,3,4,5,6,7,8,9,10,11)
